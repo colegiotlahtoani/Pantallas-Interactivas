@@ -1,124 +1,92 @@
-import React from "react";
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduTech Solutions - Pantallas Interactivas</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .hero {
+      background: linear-gradient(to right, #1e3a8a, #2563eb);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
 
-// Sitio demo: Pantallas Interactivas para Colegios — diseño moderno y responsive
-// Usa Tailwind CSS (asume que tu proyecto ya tiene Tailwind configurado)
+  <!-- Encabezado -->
+  <header class="hero text-white p-8 text-center">
+    <h1 class="text-4xl font-bold">EduTech Solutions</h1>
+    <p class="text-xl mt-2">Transformando el aprendizaje con tecnología interactiva</p>
+  </header>
 
-export default function InteractiveScreensSite() {
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-slate-100 text-slate-900">
-      {/* NAV */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-violet-600 rounded-lg flex items-center justify-center text-white font-bold shadow-md">ESM</div>
-            <div>
-              <h1 className="text-xl font-semibold leading-tight">EduScreenMX — Innovación en Aulas Digitales</h1>
-              <p className="text-xs text-slate-500">Vendemos · Instalamos · Capacitamos — Soluciones para colegios</p>
-            </div>
-          </div>
+  <!-- Sección del producto principal -->
+  <section class="p-8 text-center">
+    <h2 class="text-3xl font-bold mb-4">Pantalla Interactiva para Colegios</h2>
+    <p class="mb-6 text-lg">
+      Ofrecemos la venta e instalación de pantallas interactivas de última generación para colegios,
+      facilitando una experiencia de aprendizaje dinámica y moderna.
+    </p>
 
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            <a href="#productos" className="hover:text-blue-600">Modelos</a>
-            <a href="#soluciones" className="hover:text-blue-600">Para Colegios</a>
-            <a href="#centro" className="hover:text-blue-600">Centro de experiencias</a>
-            <a href="#ejemplos" className="hover:text-blue-600">Ejemplos</a>
-            <a href="#contacto" className="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:opacity-95">Cotiza ahora</a>
-          </nav>
-
-          <button className="md:hidden p-2 rounded-md border border-slate-200">☰</button>
-        </div>
-      </header>
-
-      {/* HERO */}
-      <main className="max-w-6xl mx-auto px-6 py-12">
-        {/* --- (todo el contenido que ya tenías antes) --- */}
-
-        {/* TESTIMONIALS */}
-        <section className="mt-12">
-          <h3 className="text-2xl font-bold">Lo que dicen los colegios</h3>
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-            <blockquote className="bg-white p-4 rounded-xl shadow">“La instalación fue rápida y el profesorado se adaptó en semanas. Atención profesional.”<div className="mt-3 text-xs text-slate-500">— Colegio San Gabriel</div></blockquote>
-            <blockquote className="bg-white p-4 rounded-xl shadow">“Mejoramos nuestra clase híbrida y las clases a distancia son ahora sencillas de impartir.”<div className="mt-3 text-xs text-slate-500">— Secundaria Nueva Era</div></blockquote>
-            <blockquote className="bg-white p-4 rounded-xl shadow">“El centro de experiencias nos ayudó a elegir el mejor modelo para nuestras aulas.”<div className="mt-3 text-xs text-slate-500">— Instituto La Paz</div></blockquote>
-          </div>
-        </section>
-
-        {/* GALERÍA DE EJEMPLOS */}
-        <section id="ejemplos" className="mt-12">
-          <h3 className="text-2xl font-bold">Ejemplos de proyectos — EduScreenMX</h3>
-          <p className="text-slate-600 mt-2">
-            Estas son algunas instalaciones y demostraciones realizadas con nuestras pantallas interactivas.
-          </p>
-
-          {/* Video */}
-          <div className="mt-6">
-            <video controls className="w-full rounded-xl shadow border border-slate-200">
-              <source src="/media/copy_148B5B47-D403-4F5E-AD9D-65F0F61F3ADE.mov" type="video/mp4" />
-              Tu navegador no soporta video.
-            </video>
-          </div>
-
-          {/* Imágenes */}
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {[
-              "IMG_1727.jpg",
-              "IMG_1729.jpg",
-              "IMG_1730.jpg",
-              "IMG_1731.jpg",
-              "IMG_1732.jpg",
-              "IMG_1733.jpg",
-              "IMG_1734.jpg",
-              "IMG_1735.jpg",
-              "IMG_1737.jpg",
-              "IMG_1738.jpg",
-              "IMG_1739.jpg",
-              "IMG_1740.jpg",
-              "IMG_1742.jpg",
-            ].map((img) => (
-              <div key={img} className="rounded-lg overflow-hidden shadow hover:shadow-lg border border-slate-200">
-                <img src={`/media/${img}`} alt={img} className="w-full h-56 object-cover" />
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* FOOTER */}
-        <footer className="mt-16 py-8 text-sm text-slate-600 border-t border-slate-200">
-          <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
-            <div>© {new Date().getFullYear()} EduScreenMX — Soluciones Educativas</div>
-            <div className="flex items-center gap-4 mt-4 md:mt-0">
-              <a className="hover:text-blue-600">Política de privacidad</a>
-              <a className="hover:text-blue-600">Aviso de privacidad</a>
-            </div>
-          </div>
-        </footer>
-      </main>
+    <div class="bg-white shadow-lg rounded-2xl p-6 max-w-lg mx-auto">
+      <h3 class="text-2xl font-semibold">Modelo: IHS2-65SA</h3>
+      <p class="mt-2 text-gray-700">
+        Pantalla interactiva de 65 pulgadas ideal para salones de clases y espacios educativos. 
+        Incluye instalación profesional y capacitación básica.
+      </p>
+      <p class="mt-4 text-xl font-bold text-blue-600">Precio: $38,999 MXN</p>
+      <button class="mt-4 px-6 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700">
+        Solicitar Cotización
+      </button>
     </div>
-  );
-}
+  </section>
 
+  <!-- Galería de instalaciones -->
+  <section class="p-8 bg-gray-100">
+    <h2 class="text-3xl font-bold text-center mb-6">Galería de Instalaciones</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
 
-// Datos de producto de ejemplo
-const PRODUCTS = [
-  {
-    name: "EDU 65 — All-in-One",
-    desc: "65\" 4K, Android integrado, 20 puntos táctiles, software educativo incluido.",
-    specs: "65\" • 4K • Android",
-    price: "Desde $31,000 MXN",
-    image: "/media/IMG_1727.jpg",
-  },
-  {
-    name: "PRO 75 — Aulas grandes",
-    desc: "75\" 4K, más brillo, control centralizado y soporte extendido.",
-    specs: "75\" • 4K • Windows/Android",
-    price: "Desde $48,000 MXN",
-    image: "/media/IMG_1730.jpg",
-  },
-  {
-    name: "AUD 86 — Auditorios",
-    desc: "86\" 4K, ideal para auditorios y salas grandes. Soporte multimedia y videowall.",
-    specs: "86\" • 4K • Conectividad completa",
-    price: "Desde $78,000 MXN",
-    image: "/media/IMG_1735.jpg",
-  },
-];
+      <!-- Imágenes de ejemplo -->
+      <img src="IMG_1727.jpg" alt="Instalación 1" class="rounded-xl shadow">
+      <img src="IMG_1729.jpg" alt="Instalación 2" class="rounded-xl shadow">
+      <img src="IMG_1730.jpg" alt="Instalación 3" class="rounded-xl shadow">
+      <img src="IMG_1731.jpg" alt="Instalación 4" class="rounded-xl shadow">
+      <img src="IMG_1732.jpg" alt="Instalación 5" class="rounded-xl shadow">
+      <img src="IMG_1733.jpg" alt="Instalación 6" class="rounded-xl shadow">
+
+      <!-- Video de instalación -->
+      <video controls class="rounded-xl shadow col-span-2 md:col-span-3">
+        <source src="copy_148B5B47-D403-4F5E-AD9D-65F0F61F3ADE.mov" type="video/mp4">
+        Tu navegador no soporta la reproducción de video.
+      </video>
+    </div>
+  </section>
+
+  <!-- Beneficios de trabajar con EduTech Solutions -->
+  <section class="p-8 text-center">
+    <h2 class="text-3xl font-bold mb-4">Por qué elegirnos</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-xl font-bold mb-2">Instalación Profesional</h3>
+        <p>Nos encargamos de todo el proceso para que tu pantalla esté lista para usarse el mismo día.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-xl font-bold mb-2">Soporte Técnico</h3>
+        <p>Te ofrecemos soporte y capacitación para que saques el máximo provecho de tu pantalla.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-xl font-bold mb-2">Calidad Garantizada</h3>
+        <p>Trabajamos con equipos de la más alta calidad, asegurando durabilidad y eficiencia.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pie de página -->
+  <footer class="bg-gray-800 text-white text-center p-4 mt-8">
+    <p>© 2025 EduTech Solutions - Todos los derechos reservados</p>
+  </footer>
+
+</body>
+</html>
