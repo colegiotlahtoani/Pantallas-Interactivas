@@ -5,63 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EduTech Solutions - Pantallas Interactivas</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
   <style>
+    /* Fondo animado para el hero */
     .hero {
-      background: linear-gradient(to right, #1e3a8a, #2563eb);
+      background: linear-gradient(-45deg, #1e3a8a, #2563eb, #4f46e5, #6366f1);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    /* Animación suave al aparecer */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Efecto hover en imágenes */
+    .gallery-img {
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .gallery-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
     }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
 
-  <!-- Encabezado -->
-  <header class="hero text-white p-8 text-center">
-    <h1 class="text-4xl font-bold">EduTech Solutions</h1>
-    <p class="text-xl mt-2">Transformando el aprendizaje con tecnología interactiva</p>
+  <!-- Hero -->
+  <header class="hero text-white p-12 text-center relative overflow-hidden">
+    <h1 class="text-5xl font-extrabold fade-in">EduTech Solutions</h1>
+    <p class="text-xl mt-3 fade-in" style="animation-delay: 0.3s;">
+      Innovación en la educación a través de la tecnología
+    </p>
+    <a href="#producto" class="mt-6 inline-block px-8 py-3 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition duration-300 fade-in" style="animation-delay: 0.6s;">
+      Descubre nuestras pantallas
+    </a>
   </header>
 
   <!-- Producto principal -->
-  <section class="p-8 text-center">
-    <h2 class="text-3xl font-bold mb-4">Pantalla Interactiva para Colegios</h2>
-    <p class="mb-6 text-lg">
-      Ofrecemos la venta e instalación de pantallas interactivas de última generación para colegios,
-      facilitando una experiencia de aprendizaje dinámica y moderna.
+  <section id="producto" class="p-8 text-center">
+    <h2 class="text-4xl font-bold mb-6 fade-in">Pantalla Interactiva para Colegios</h2>
+    <p class="mb-8 text-lg max-w-2xl mx-auto fade-in">
+      Llevamos la educación al siguiente nivel con pantallas interactivas que fomentan la participación, la colaboración y el aprendizaje dinámico en las aulas.
     </p>
 
-    <div class="bg-white shadow-lg rounded-2xl p-6 max-w-lg mx-auto">
-      <h3 class="text-2xl font-semibold">Modelo: IHS2-65SA</h3>
-      <p class="mt-2 text-gray-700">
-        Pantalla interactiva de 65 pulgadas ideal para salones de clases y espacios educativos. 
-        Incluye instalación profesional y capacitación básica.
+    <div class="bg-white shadow-xl rounded-2xl p-8 max-w-lg mx-auto fade-in" style="animation-delay: 0.5s;">
+      <h3 class="text-2xl font-bold">Modelo: IHS2-65SA</h3>
+      <p class="mt-3 text-gray-700">
+        Pantalla interactiva de <strong>65 pulgadas</strong>, perfecta para salones de clase modernos.
+        Incluye <strong>instalación profesional</strong> y capacitación básica para profesores.
       </p>
-      <p class="mt-4 text-xl font-bold text-blue-600">Precio: $38,999 MXN</p>
-      <button class="mt-4 px-6 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700">
+      <p class="mt-5 text-2xl font-extrabold text-blue-700">Precio: $38,999 MXN</p>
+      <button class="mt-6 px-8 py-3 bg-blue-700 text-white rounded-xl hover:bg-blue-800 transition">
         Solicitar Cotización
       </button>
     </div>
   </section>
 
-  <!-- Galería de instalaciones -->
-  <section class="p-8 bg-gray-100">
-    <h2 class="text-3xl font-bold text-center mb-6">Galería de Instalaciones</h2>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+  <!-- Galería -->
+  <section class="p-10 bg-gray-100">
+    <h2 class="text-4xl font-bold text-center mb-8 fade-in">Galería de Instalaciones</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto fade-in" style="animation-delay: 0.4s;">
 
-      <!-- Todas las imágenes proporcionadas -->
-      <img src="IMG_1727.jpg" alt="Instalación 1" class="rounded-xl shadow">
-      <img src="IMG_1729.jpg" alt="Instalación 2" class="rounded-xl shadow">
-      <img src="IMG_1730.jpg" alt="Instalación 3" class="rounded-xl shadow">
-      <img src="IMG_1731.jpg" alt="Instalación 4" class="rounded-xl shadow">
-      <img src="IMG_1732.jpg" alt="Instalación 5" class="rounded-xl shadow">
-      <img src="IMG_1733.jpg" alt="Instalación 6" class="rounded-xl shadow">
-      <img src="IMG_1734.jpg" alt="Instalación 7" class="rounded-xl shadow">
-      <img src="IMG_1735.jpg" alt="Instalación 8" class="rounded-xl shadow">
-      <img src="IMG_1737.jpg" alt="Instalación 9" class="rounded-xl shadow">
-      <img src="IMG_1738.jpg" alt="Instalación 10" class="rounded-xl shadow">
-      <img src="IMG_1739.jpg" alt="Instalación 11" class="rounded-xl shadow">
-      <img src="IMG_1740.jpg" alt="Instalación 12" class="rounded-xl shadow">
-      <img src="IMG_1742.jpg" alt="Instalación 13" class="rounded-xl shadow">
+      <!-- Todas las imágenes -->
+      <img src="IMG_1727.jpg" alt="Instalación 1" class="gallery-img rounded-xl">
+      <img src="IMG_1729.jpg" alt="Instalación 2" class="gallery-img rounded-xl">
+      <img src="IMG_1730.jpg" alt="Instalación 3" class="gallery-img rounded-xl">
+      <img src="IMG_1731.jpg" alt="Instalación 4" class="gallery-img rounded-xl">
+      <img src="IMG_1732.jpg" alt="Instalación 5" class="gallery-img rounded-xl">
+      <img src="IMG_1733.jpg" alt="Instalación 6" class="gallery-img rounded-xl">
+      <img src="IMG_1734.jpg" alt="Instalación 7" class="gallery-img rounded-xl">
+      <img src="IMG_1735.jpg" alt="Instalación 8" class="gallery-img rounded-xl">
+      <img src="IMG_1737.jpg" alt="Instalación 9" class="gallery-img rounded-xl">
+      <img src="IMG_1738.jpg" alt="Instalación 10" class="gallery-img rounded-xl">
+      <img src="IMG_1739.jpg" alt="Instalación 11" class="gallery-img rounded-xl">
+      <img src="IMG_1740.jpg" alt="Instalación 12" class="gallery-img rounded-xl">
+      <img src="IMG_1742.jpg" alt="Instalación 13" class="gallery-img rounded-xl">
 
       <!-- Video -->
-      <video controls class="rounded-xl shadow col-span-2 md:col-span-3">
+      <video controls class="rounded-xl shadow col-span-2 md:col-span-3 lg:col-span-4">
         <source src="copy_148B5B47-D403-4F5E-AD9D-65F0F61F3ADE.mov" type="video/mp4">
         Tu navegador no soporta la reproducción de video.
       </video>
@@ -69,30 +106,32 @@
   </section>
 
   <!-- Beneficios -->
-  <section class="p-8 text-center">
-    <h2 class="text-3xl font-bold mb-4">Por qué elegirnos</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+  <section class="p-10 text-center">
+    <h2 class="text-4xl font-bold mb-10 fade-in">Por qué elegirnos</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto fade-in">
 
-      <div class="bg-white p-6 rounded-xl shadow">
-        <h3 class="text-xl font-bold mb-2">Instalación Profesional</h3>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
+        <h3 class="text-2xl font-bold mb-3 text-blue-700">Instalación Profesional</h3>
         <p>Nos encargamos de todo el proceso para que tu pantalla esté lista para usarse el mismo día.</p>
       </div>
 
-      <div class="bg-white p-6 rounded-xl shadow">
-        <h3 class="text-xl font-bold mb-2">Soporte Técnico</h3>
-        <p>Te ofrecemos soporte y capacitación para que saques el máximo provecho de tu pantalla.</p>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
+        <h3 class="text-2xl font-bold mb-3 text-blue-700">Soporte Técnico</h3>
+        <p>Brindamos capacitación y soporte para asegurar que aproveches al máximo tu equipo.</p>
       </div>
 
-      <div class="bg-white p-6 rounded-xl shadow">
-        <h3 class="text-xl font-bold mb-2">Calidad Garantizada</h3>
-        <p>Trabajamos con equipos de la más alta calidad, asegurando durabilidad y eficiencia.</p>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
+        <h3 class="text-2xl font-bold mb-3 text-blue-700">Calidad Garantizada</h3>
+        <p>Equipos de la más alta calidad que aseguran durabilidad y rendimiento en el aula.</p>
       </div>
+
     </div>
   </section>
 
-  <!-- Pie de página -->
-  <footer class="bg-gray-800 text-white text-center p-4 mt-8">
-    <p>© 2025 EduTech Solutions - Todos los derechos reservados</p>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center p-6 mt-10">
+    <p class="text-lg">© 2025 EduTech Solutions - Todos los derechos reservados</p>
+    <p class="text-sm mt-2">Contáctanos: contacto@edutechsolutions.com | Tel: +52 33 2037 0882</p>
   </footer>
 
 </body>
